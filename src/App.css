@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+}
+
+.rowBtn {
+ 
+  height: 40px;
+  width: 100%;
+  outline: 0;
+  text-align: left;
+  background: none;
+  background-color: #f9f9ff;
+
+  border: 1px dotted black;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+  position: relative;
+  padding-left: 10px;
+  transition: .45s all ease;
+}
+.rowBtn:hover{
+  background-color:#90acd1 ;
+ 
+
+}
+.modal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.btn {
+  text-align: center;
+  font-weight: bold;
+  border-top: 1px solid;
+  outline: 0 !important;
+  background-color: #f9f9ff;
+  width: 100%;
+  font-size: 24px;
+}
+.btn:nth-child(1) {
+  border-bottom-left-radius: 10px;
+  border-right: 1px solid;
+}
+.btn:nth-child(2) {
+  border-bottom-right-radius: 10px;
+}
+.sub-heading {
+  font-size: 18px;
+}
+.heading {
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.main {
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  flex-wrap: wrap;
+  animation: zoom-in 2s ease;
+  border-radius: 10px;
+  background-color: #90acd1;
+  border: 1px solid;
+}
+.row {
+  display: flex;
+}
+.calendar {
+  position: absolute;
+  top: 0;
+}
