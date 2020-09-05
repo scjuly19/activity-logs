@@ -16,17 +16,27 @@ const List = () => {
   const [activeDate, setDate] = useState();
   const [isCalendarVisible, toggleCalendar] = useState(false);
 
+  /**@param none
+   * @description Toggles the view of calendar
+   */
   const showCalendar = () => {
     toggleCalendar(!isCalendarVisible);
   };
+
+  /**@description Calls the function to get data from API */
   useEffect(() => {
     loadData();
   }, []);
+
+  /**@description Fetch the data from API and set it to usersData */
   const loadData = async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
     setUserData(data.members);
   };
+
+  /**@param activityObject
+   * @description Toggles the view of modal */
   const toggleModal = (item) => {
     setDate(new Date());
     setModalVisible(!isVisible);
@@ -34,6 +44,10 @@ const List = () => {
 
     setActivityData(item.activity_periods);
   };
+
+  /**@param DateSelected
+   * @description Filter the data as per the date selected 
+   */
   const onDateChange = (val) => {
     setDate(val);
     const newData = activityData.filter((item, index) => {
@@ -48,6 +62,8 @@ const List = () => {
     setActivityData(newData);
     toggleCalendar(false);
   };
+
+  
   return (
     <div className="App">
       {usersData.map((item, index) => {
